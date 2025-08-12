@@ -1,0 +1,15 @@
+def enviar_email(nome, endereco, mensagem):
+    if nome == "Ana":
+        if endereco == "Rua A":
+            if mensagem == "Olá":
+                print("Email enviado para Ana")
+    elif nome == "João":
+        if endereco == "Rua B":
+            if mensagem == "Oi":
+                print("Email enviado para João")
+    elif nome == "Maria":
+        if endereco == "Rua C":
+            if mensagem == "Oi":
+                print("Email enviado para Maria")
+    else:
+        print("Não foi possível enviar o email")
