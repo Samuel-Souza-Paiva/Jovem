@@ -1,18 +1,25 @@
-def enviar_email(nome, endereco, mensagem):
-    # Declaração de variavel  
+def enviar_email(nome: str, endereco: str, mensagem: str) -> None:
+    """
+    Envia um email seguindo regras predefinidas.
+    
+    Parâmetros:
+    nome (str): Nome do destinatário.
+    endereco (str): Endereço do destinatário.
+    mensagem (str): Conteúdo da mensagem.
+    """
+    # Dicionário com combinações válidas e mensagens de envio
     normas_envio = {
         ("Ana", "Rua A", "Olá"): "Email enviado para Ana",
         ("João", "Rua B", "Oi"): "Email enviado para João",
         ("Maria", "Rua C", "Oi"): "Email enviado para Maria"
     }
 
-    # Verifica se está no dicionario 
-    if (nome, endereco, mensagem) in normas_envio:
-        print(normas_envio[(nome, endereco, mensagem)])
-    else:
-        print("Não foi possível enviar o email")
+    # Recupera a mensagem correspondente ou mensagem de erro
+    resultado = normas_envio.get((nome, endereco, mensagem), "Não foi possível enviar o email")
+    print(resultado)
 
-        #  Opções de testes
+
+# ======= Testes =======
 enviar_email("Ana", "Rua A", "Olá")
 enviar_email("João", "Rua D", "Oi")
 enviar_email("Maria", "Rua C", "Oi")
