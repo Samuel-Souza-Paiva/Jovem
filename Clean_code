@@ -1,15 +1,18 @@
 def enviar_email(nome, endereco, mensagem):
-    if nome == "Ana":
-        if endereco == "Rua A":
-            if mensagem == "Olá":
-                print("Email enviado para Ana")
-    elif nome == "João":
-        if endereco == "Rua B":
-            if mensagem == "Oi":
-                print("Email enviado para João")
-    elif nome == "Maria":
-        if endereco == "Rua C":
-            if mensagem == "Oi":
-                print("Email enviado para Maria")
+    # Declaração de variavel  
+    normas_envio = {
+        ("Ana", "Rua A", "Olá"): "Email enviado para Ana",
+        ("João", "Rua B", "Oi"): "Email enviado para João",
+        ("Maria", "Rua C", "Oi"): "Email enviado para Maria"
+    }
+
+    # Verifica se está no dicionario 
+    if (nome, endereco, mensagem) in normas_envio:
+        print(normas_envio[(nome, endereco, mensagem)])
     else:
         print("Não foi possível enviar o email")
+
+        #  Opções de testes
+enviar_email("Ana", "Rua A", "Olá")
+enviar_email("João", "Rua D", "Oi")
+enviar_email("Maria", "Rua C", "Oi")
